@@ -1,16 +1,16 @@
+#import modules for future use
 import os
 import pygame
 import time
 import keyboard
 import random
 
+#define variables
 player = '\033[01;35m*'
 Projectile = '\033[01;34m!'
 uneditedplayerpos = 25
 difficulty = 1
 fire = False
-#playerpos = uneditedplayerpos
-
 firepoint = 0
 levelcompiled = ''
 newloc = 0
@@ -18,8 +18,9 @@ warningcolumns = [0, 11, 12, 23, 24, 35, 36, 47, 48, 59]
 level = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ]
 
-class projectile():
-    def move():
+
+class projectile(): #create projectile class
+    def move(): #create a move function within the class to manage projectile movement
         newloc = firepoint + 1
         if newloc != warningcolumns[0]:
                 if newloc != warningcolumns[1]:
@@ -32,14 +33,14 @@ class projectile():
                                                                         if newloc != warningcolumns[8]:
                                                                                 if newloc != warningcolumns[9]:
                                                                                         level[newloc] = Projectile
-while True:
-    fire = True
+while True: #main loop, runs repated code
+    fire = True #set's fire to true, for testing purposes
     firepoint += 1
     firechance = random.randint(difficulty,1200)
     if firechance <= difficulty:
         fire = True
 
-    try:
+    try: #attempt to check if the keys are being pressed. try: is used to avoid crashing the program if an exception occurs
         if keyboard.is_pressed('up'):
             if uneditedplayerpos > 10:
                 uneditedplayerpos -= 10
@@ -53,7 +54,7 @@ while True:
             if uneditedplayerpos != 10 and uneditedplayerpos != 20 and uneditedplayerpos != 30 and uneditedplayerpos != 40 and uneditedplayerpos != 50:
                 uneditedplayerpos += 1
     except:
-        pass
+        pass #if an error occurs in the key detection, do nothing and continue with the code
     playerpos = uneditedplayerpos
     moveup = False
     moveupright = False
@@ -78,7 +79,7 @@ while True:
     #print(12 % 2)
     #print(13 % 2)
 
-    while i < 60:
+    while i < 60: #loop generates the level based on previously modified variables
         #print('s ' + str(i))
         w = 0
         while w < 10:
@@ -111,7 +112,7 @@ while True:
         i = i + 1
 
     r = 0
-    #projectile.move()
+    projectile.move()
 
     if uneditedplayerpos > 10:
         playerpos = playerpos+2
@@ -124,10 +125,10 @@ while True:
 
     level[playerpos] = player
 
-    while r < i:
+    while r < i: #compiles level into a single string to be printed by the system
         #print(r)
         levelcompiled = levelcompiled + str(level[r])
         r += 1
-    time.sleep(0.05)
-    os.system('cls')
-    print(levelcompiled)
+    time.sleep(0.05) #pauses to prevent speeds that are too high for the player
+    os.system('cls') #clears the output for the level to be printed onto
+    print(levelcompiled) #prints the compiled level into the output
