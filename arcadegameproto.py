@@ -14,14 +14,24 @@ fire = False
 firepoint = 0
 levelcompiled = ''
 newloc = 0
+warningcolumns = [0, 11, 12, 23, 24, 35, 36, 47, 48, 59]
 level = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ]
 
 class projectile():
     def move():
         newloc = firepoint + 1
-        level[newloc] = Projectile
-
+        if newloc != warningcolumns[0]:
+                if newloc != warningcolumns[1]:
+                        if newloc != warningcolumns[2]:
+                                if newloc != warningcolumns[3]:
+                                        if newloc != warningcolumns[4]:
+                                                if newloc != warningcolumns[5]:
+                                                        if newloc != warningcolumns[6]:
+                                                                if newloc != warningcolumns[7]:
+                                                                        if newloc != warningcolumns[8]:
+                                                                                if newloc != warningcolumns[9]:
+                                                                                        level[newloc] = Projectile
 while True:
     fire = True
     firepoint += 1
@@ -54,7 +64,7 @@ while True:
     moveleft = False
     moveupleft = False
 
-    warningcolumns = [0, 11, 12, 23, 24, 35, 36, 47, 48, 59]
+
     levelcompiled = ""
 
     if fire:
