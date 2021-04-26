@@ -17,10 +17,10 @@ newloc = 0
 warningcolumns = [0, 11, 12, 23, 24, 35, 36, 47, 48, 59]
 level = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ]
-
+Poggers = False
 
 class projectile(): #create projectile class
-    def move(firepoint): #create a move function within the class to manage projectile movement
+    def move(): #create a move function within the class to manage projectile movement
         newloc = firepoint + 1
         if newloc != warningcolumns[0]:
                 if newloc != warningcolumns[1]:
@@ -33,35 +33,14 @@ class projectile(): #create projectile class
                                                                         if newloc != warningcolumns[8]:
                                                                                 if newloc != warningcolumns[9]:
                                                                                         level[newloc] = Projectile
-                                                                                else:
-                                                                                        firepoint = 0
-                                                                        else:
-                                                                                firepoint = 0
-                                                                else:
-                                                                        firepoint = 0
-                                                        else:
-                                                                firepoint = 0
-                                                else:
-                                                        firepoint = 0
-                                        else:
-                                                firepoint = 0
-                                else:
-                                        firepoint = 0
-                        else:
-                                firepoint = 0
-                else:
-                        firepoint = 0
-        else:
-                firepoint = 0
-        return firepoint
 while True: #main loop, runs repated code
-    fire = True #sets fire to true, for testing purposes
+    fire = True #set's fire to true, for testing purposes
     firepoint += 1
     firechance = random.randint(difficulty,1200)
     if firechance <= difficulty:
         fire = True
 
-    try: #attempt to check if the keys are being pressed. "try:" is used to avoid crashing the program if an exception occurs
+    try: #attempt to check if the keys are being pressed. try: is used to avoid crashing the program if an exception occurs
         if keyboard.is_pressed('up'):
             if uneditedplayerpos > 10:
                 uneditedplayerpos -= 10
@@ -133,7 +112,7 @@ while True: #main loop, runs repated code
         i = i + 1
 
     r = 0
-    projectile.move(firepoint)
+    projectile.move()
 
     if uneditedplayerpos > 10:
         playerpos = playerpos+2
@@ -153,3 +132,6 @@ while True: #main loop, runs repated code
     time.sleep(0.05) #pauses to prevent speeds that are too high for the player
     os.system('cls') #clears the output for the level to be printed onto
     print(levelcompiled) #prints the compiled level into the output
+
+if poggers = true:
+        print(poggers)
