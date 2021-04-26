@@ -20,7 +20,7 @@ level = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
 
 
 class projectile(): #create projectile class
-    def move(): #create a move function within the class to manage projectile movement
+    def move(firepoint): #create a move function within the class to manage projectile movement
         newloc = firepoint + 1
         if newloc != warningcolumns[0]:
                 if newloc != warningcolumns[1]:
@@ -53,6 +53,7 @@ class projectile(): #create projectile class
                         firepoint = 0
         else:
                 firepoint = 0
+        return firepoint
 while True: #main loop, runs repated code
     fire = True #sets fire to true, for testing purposes
     firepoint += 1
@@ -132,7 +133,7 @@ while True: #main loop, runs repated code
         i = i + 1
 
     r = 0
-    projectile.move()
+    projectile.move(firepoint)
 
     if uneditedplayerpos > 10:
         playerpos = playerpos+2
