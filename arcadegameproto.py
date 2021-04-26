@@ -34,13 +34,13 @@ class projectile(): #create projectile class
                                                                                 if newloc != warningcolumns[9]:
                                                                                         level[newloc] = Projectile
 while True: #main loop, runs repated code
-    fire = True #set's fire to true, for testing purposes
+    fire = True #sets fire to true, for testing purposes
     firepoint += 1
     firechance = random.randint(difficulty,1200)
     if firechance <= difficulty:
         fire = True
 
-    try: #attempt to check if the keys are being pressed. try: is used to avoid crashing the program if an exception occurs
+    try: #attempt to check if the keys are being pressed. "try:" is used to avoid crashing the program if an exception occurs
         if keyboard.is_pressed('up'):
             if uneditedplayerpos > 10:
                 uneditedplayerpos -= 10
