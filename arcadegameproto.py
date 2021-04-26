@@ -33,6 +33,26 @@ class projectile(): #create projectile class
                                                                         if newloc != warningcolumns[8]:
                                                                                 if newloc != warningcolumns[9]:
                                                                                         level[newloc] = Projectile
+                                                                                else:
+                                                                                        firepoint = 0
+                                                                        else:
+                                                                                firepoint = 0
+                                                                else:
+                                                                        firepoint = 0
+                                                        else:
+                                                                firepoint = 0
+                                                else:
+                                                        firepoint = 0
+                                        else:
+                                                firepoint = 0
+                                else:
+                                        firepoint = 0
+                        else:
+                                firepoint = 0
+                else:
+                        firepoint = 0
+        else:
+                firepoint = 0
 while True: #main loop, runs repated code
     fire = True #sets fire to true, for testing purposes
     firepoint += 1
